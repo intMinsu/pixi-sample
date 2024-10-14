@@ -1,6 +1,6 @@
 [project]
 name = "pixi-sample"
-channels = ["pytorch", "nvidia", "conda-forge"]
+channels = ["pytorch", "nvidia", "conda-forge", "nvidia/label/cuda-12.1.0"]
 description = "A pixi.toml for AI development"
 authors = ["intMinsu <minsurcv@gmail.com>"]
 platforms = ["linux-64"]
@@ -53,26 +53,25 @@ numpy = {channel = "conda-forge", version = "<2,>=1.20"}
 pytorch =  {channel = "pytorch", version = "1.13.1"}
 pytorch-cuda = {channel = "pytorch", version = "11.7"}
 cudatoolkit = {channel = "conda-forge", version = "11.7"}
-cudnn = {channel = "conda-forge", version = "8.5.*"}
+cudnn = {channel = "conda-forge", version = "8.3.*"}
 torchvision = {channel = "pytorch", version = "0.14.1"}
 torchaudio = {channel = "pytorch", version = "0.13.1"}
-pytorch_lightning = {channel = "conda-forge", version="*"}
+pytorch-lightning = {channel = "conda-forge", version="*"}
 numpy = {channel = "conda-forge", version = "<2,>=1.20"}
 
 [feature.cu121.dependencies]
 pytorch =  {channel = "pytorch", version = "2.3.0"}
 pytorch-cuda = {channel = "pytorch", version = "12.1"}
-cudatoolkit = {channel = "nvidia/label/cuda-12.1.0", version = "12.1.*"}
+cuda = {channel = "nvidia/label/cuda-12.1.0", version = "*"}
 cudnn = {channel = "conda-forge", version = "8.9.*"}
 torchvision = {channel = "pytorch", version = "0.18.0"}
 torchaudio = {channel = "pytorch", version = "2.3.0"}
-pytorch_lightning = {channel = "conda-forge", version="*"}
+pytorch-lightning = {channel = "conda-forge", version="*"}
 mkl = {channel = "conda-forge", version="2023.0.0"}
 numpy = {channel = "conda-forge", version = "*"}
 
 [environments]
 py38cu101 = {features = ["py38", "cu101"]}
-py39cu101 = {features = ["py39", "cu101"]}
 
 py38cu110 = {features = ["py38", "cu110"]}
 py39cu110 = {features = ["py39", "cu110"]}
